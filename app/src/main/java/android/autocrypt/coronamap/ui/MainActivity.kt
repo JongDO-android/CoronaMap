@@ -1,5 +1,6 @@
-package android.autocrypt.coronamap
+package android.autocrypt.coronamap.ui
 
+import android.autocrypt.coronamap.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
