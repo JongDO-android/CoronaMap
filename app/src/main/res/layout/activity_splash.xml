@@ -4,15 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="android.autocrypt.coronamap.viewmodel.SplashViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.SplashActivity">
 
         <android.autocrypt.coronamap.ui.CircleProgressBar
+            android:id="@+id/cp_progress"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:progress="0f"
+            app:progress="@{viewModel.progress}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
