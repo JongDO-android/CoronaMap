@@ -27,7 +27,7 @@ class CircleProgressBar constructor(
             R.styleable.CircleProgressBarAttr,
             0, 0).apply {
             try {
-                mProgress = getFloat(R.styleable.CircleProgressBarAttr[0], 0f)
+                mProgress = getFloat(R.styleable.CircleProgressBarAttr_progress, 0f)
             } finally {
                 recycle()
             }
@@ -37,10 +37,10 @@ class CircleProgressBar constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         arcRect.set(
-            0f,
-            0f,
-            width.toFloat(),
-            height.toFloat()
+            5f,
+            5f,
+            width.toFloat() - 5,
+            height.toFloat() - 5
         )
         canvas?.drawArc(arcRect, START_PROGRESS, mProgress, false, paint)
     }
@@ -51,6 +51,7 @@ class CircleProgressBar constructor(
     }
 
     companion object {
-        const val START_PROGRESS = 0f
+        const val START_PROGRESS = 180f
+        const val END_ARC_VALUE = 360f
     }
 }
